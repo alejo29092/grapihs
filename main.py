@@ -29,19 +29,20 @@ def surviving_passagers_chart_sex(a):
 
 def choose_var_1(a):
     a = a.drop_duplicates(subset=['PassengerId'])
-    v = input('put the var 1 among the following'
-              '1 PassengerId'
-              '2 Survived '
-              '3 Pclass '
-              '4 Name '
-              '5 Sex '
-              '6 Age '
-              '7 SibSp'
-              '8 Parch'
-              '9 Ticket'
-              '10 Fare'
-              '11 Cabin'
-              '12 Embarked')
+    v = input("""put the var 1 among the following'
+              1 PassengerId
+              2 Survived 
+              3 Pclass 
+              4 Name 
+              5 Sex 
+              6 Age 
+              7 SibSp
+              8 Parch
+              9 Ticket
+              10 Fare
+              11 Cabin
+              12 Embarked
+              option: """)
     if v == '1':
         a = a.loc[:, ['PassengerId']]
 
@@ -83,19 +84,20 @@ def choose_var_1(a):
 
 def choose_var_2(a):
     a = a.drop_duplicates(subset=['PassengerId'])
-    v = input('put the var 2 among the following'
-              '1 PassengerId'
-              '2 Survived '
-              '3 Pclass '
-              '4 Name '
-              '5 Sex '
-              '6 Age '
-              '7 SibSp'
-              '8 Parch'
-              '9 Ticket'
-              '10 Fare'
-              '11 Cabin'
-              '12 Embarked')
+    v = input("""put the var 2 among the following'
+              1 PassengerId
+              2 Survived 
+              3 Pclass 
+              4 Name 
+              5 Sex 
+              6 Age 
+              7 SibSp
+              8 Parch
+              9 Ticket
+              10 Fare
+              11 Cabin
+              12 Embarked
+              option: '""")
     if v == '1':
         a = a.loc[:, ['PassengerId']]
         return a
