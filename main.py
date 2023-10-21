@@ -97,7 +97,7 @@ def choose_var_2(a):
               10 Fare
               11 Cabin
               12 Embarked
-              option: '""")
+              option: """)
     if v == '1':
         a = a.loc[:, ['PassengerId']]
         return a
