@@ -115,7 +115,9 @@ def choose_var_2(a):
 
 
 def use_mode():
-    df = df
+    df = pd.read_csv("C:/Users/alejo/Desktop/pythonProject5/tested.csv")
+    df = df.drop_duplicates(inplace=True)
+
     var_option = input("""experimentent, or use pre-made variables
     1) experiment
     2)pre-made
