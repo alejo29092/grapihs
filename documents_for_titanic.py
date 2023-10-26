@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import graphics
 
 df = pd.read_csv("C:/Users/alejo/Desktop/pythonProject5/tested.csv")
-df = df.drop_duplicates(inplace=True)
+
 
 def choose_var_1(a):
     a = a.drop_duplicates(subset=['PassengerId'])
@@ -23,7 +23,6 @@ def choose_var_1(a):
               option: """)
     if v == '1':
         a = a.loc[:, ['PassengerId']]
-
         return a
     if v == '2':
         a = a.loc[:, ['Survived']]
@@ -116,14 +115,20 @@ def choose_var_2(a):
 
 def use_mode():
     df = pd.read_csv("C:/Users/alejo/Desktop/pythonProject5/tested.csv")
-    df = df.drop_duplicates(inplace=True)
+    df = df.drop_duplicates()
 
     var_option = input("""experimentent, or use pre-made variables
-    1) experiment
+    1)experiment
     2)pre-made
     option: """)
     if var_option == '1':
-        graphics.graphics_use_for_2_vars(choose_var_1(df), choose_var_2(df))
+        amount_var = input("""amount var for use: 1 or 2: """)
+        if amount_var == '1':
+            graphics.graphics_use_for_var_one_var(choose_var_1(df))
+
+        if amount_var == '2':
+            graphics.graphics_use_for_vars(choose_var_1(df), choose_var_2(df))
+
     if var_option == '2':
         pre_graphic = input("""select the option what do you want to see
             1) comparison between the living and the dead depending on sex
@@ -131,15 +136,12 @@ def use_mode():
             Option: """)
         if pre_graphic == '1':
             df = df.drop_duplicates(subset=['PassengerId'])
-            var_df_surviver = df.loc[:, ['Survived']]
-            var_df_sex = df.loc[:, ['Sex']]
-            # graphics.graphics_use_for_2_vars(var_df_surviver, var_df_sex)
-            graphics.graphics_use_for_2_vars(var_df_surviver)
-            # plt.hist(var_df_surviver, bins=15)
-            plt.tight_layout()
-            plt.show()
+            var_df_surviver = df.loc[:, ['PassengerId']]
+            var_df_sex = df.loc[:, ['Age']]
+            graphics.graphics_use_for_vars(var_df_surviver, var_df_sex)
+
 
         if pre_graphic == '2':
-            graphics.graphics_use_for_2_vars()
+            graphics.graphics_use_for_vars()
 
 # 'PassengerId','n','Pclass','Name','Sex','Age','SibSp','Parch','Ticket','Fare','Cabin','Embarked'

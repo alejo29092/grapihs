@@ -181,3 +181,8 @@ cols_cat = ['Name', 'Sex','Embarked','Cabin','Fare']
 
 for col in cols_cat:
     print(f'column: {col}: {df[col].nunique()}, sublevel')
+def not_funtional():
+    # graphics.graphics_use_for_vars(var_df_surviver)
+    # plt.hist(var_df_surviver, bins=15)
+    plt.tight_layout()
+    plt.show()
